@@ -1,0 +1,223 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: rgb(11, 11, 31);
+}
+
+.background {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  overflow: hidden;
+}
+
+.background video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.title {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  color: white;
+  text-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  z-index: 2;
+}
+
+.shape-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  z-index: 3;
+}
+
+.shape-divider svg {
+  width: 100%;
+  height: 100px;
+  display: block;
+}
+
+.shape-divider path {
+  fill:  rgb(11, 11, 31);  
+}
+
+.headerText {
+  color: bisque;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  padding-top: 15px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+p{
+  font-size: 20px;
+}
+
+.lines {
+  position: relative;
+  display: inline-block;
+  color: bisque;
+  font-size: 40px;
+  text-align: center;
+  margin: 40px auto;
+}
+
+.lines::before,
+.lines::after {
+  content: "";
+  position: absolute;
+  top: 60%;
+  width: 75px;
+  height: 4px;
+  background-color: #044d89; 
+}
+
+.lines::before {
+  left: -80px;
+  transform: translateY(-50%);
+}
+
+.lines::after {
+  right: -80px;
+  transform: translateY(-50%);
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border-radius: 24px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+}
+
+.infoText {
+  flex: 1;
+  color: bisque;
+}
+
+.infoText h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.infoText p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.infoImage {
+  flex: 1;
+  position: relative;
+}
+
+.infoImage img {
+  width: 100%;
+  height: 150%;
+  max-width: none;
+  object-fit: cover;   
+  border-radius: 0 24px 24px 0;
+  box-shadow: none;
+}
+
+
+.scroll-card {
+  opacity: 0;
+  transform: translateY(80px);
+  filter: blur(12px);
+  transition: 
+    opacity 0.5s ease-out,
+    transform 0.5s ease-out,
+    filter 0.5s ease-out;
+}
+
+.scroll-card.show {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+#subsection {
+  font-size: 35px;
+  color: bisque;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: left;
+  padding-left: 15px;
+  margin-top: 6px;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 10px;
+}
+
+.spaceCard {
+  position: relative;
+  height: 340px;
+  border-radius: 20px;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+  transition: transform 0.4s ease;
+}
+
+.spaceCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.spaceCard:hover img {
+  transform: scale(1.1);
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.1));
+  display: flex;
+  align-items: flex-end;
+  padding: 25px;
+}
+
+.cardOverlay h3 {
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cardOverlay span {
+  display: inline-flex;
+  width: 32px;
+  height: 32px;
+  background: #1d5946;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
